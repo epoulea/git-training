@@ -4,5 +4,9 @@ def hello(name: str):
 def goodbye(name: str):
     print("Goodbye ", name)
 
+def farewell(name: str):
+    print("Farewell ", name)
+
 def chao(name: str):
     print("Thank you Bye! ", name)
+
