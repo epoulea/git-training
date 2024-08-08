@@ -1,4 +1,5 @@
 from hello import hello
+from hello import goodbye
 
 def main():
     print("Welcome to the Python program!")
