@@ -3,3 +3,6 @@ def hello(name: str):
 
 def goodbye(name: str):
     print("Goodbye ", name)
+
+def farewell(name: str):
+    print("Farewell ", name)
