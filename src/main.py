@@ -1,9 +1,9 @@
-print("Hello, World!")
-print("Hello again!")
-print("hello after fix")
-print("task1")
-print("fix1")
-print("after merge")
-print("task2")
+from hello import hello
 
-print("New line here.. Is it conflict?")
+def main():
+    print("Welcome to the Python program!")
+    hello("world!")
+
+if __name__ == "__main__":
+    main()
+
