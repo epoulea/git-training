@@ -3,3 +3,6 @@ def hello(name: str):
 
 def goodbye(name: str):
     print("Goodbye ", name)
+
+def chao(name: str):
+    print("Thank you Bye! ", name)
