@@ -6,3 +6,7 @@ def goodbye(name: str):
 
 def farewell(name: str):
     print("Farewell ", name)
+
+def chao(name: str):
+    print("Thank you Bye! ", name)
+
