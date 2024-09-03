@@ -23,4 +23,4 @@ jobs:
 
       - name: Deploy code
         run: |
-          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd /home/myen/git-training/ && git pull origin ${{ secrets.MAIN_BRANCH }}"
+          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd /home/myenv/git-training/ && git pull origin ${{ secrets.MAIN_BRANCH }}"
