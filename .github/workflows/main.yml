@@ -1,4 +1,4 @@
-name: 157.230.103.34
+name: Deploy to Server
 
 on:
   push:
@@ -16,11 +16,10 @@ jobs:
       - name: Install SSH key
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
-          echo "SHA256:kzeY0Mj/gplmDcyzW+hY3YdMzK3Act3kgVOgPTzEfwI" >> ~/.ssh/known_hosts
 
       - name: Deploy code
         run: |
-          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd /home/myenv/git-training/ && git pull origin ${{ secrets.MAIN_BRANCH }}"
+          ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd /home/myenv/git-training/ && git pull origin ${{ secrets.MAIN_BRANCH }}"
