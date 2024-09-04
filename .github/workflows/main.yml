@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+  schedule:
+    - cron: '0 3 * * *'  # Runs at 3:00 AM UTC daily
 
 jobs:
   deploy:
@@ -23,8 +25,9 @@ jobs:
       - name: Deploy code
         run: |
           ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd /home/myenv/git-training/ && git pull origin ${{ secrets.MAIN_BRANCH }}"
+
       - name: Send success email
-        if: success()
+        if: ${{ success() }}
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.office365.com
@@ -34,4 +37,4 @@ jobs:
           subject: GitHub Actions Workflow Succeeded
           body: The GitHub Actions workflow has completed successfully.
           to: epp@cmm.gr
-          from: github-actions@example.com          
+          from: github-actions@example.com
