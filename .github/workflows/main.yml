@@ -33,7 +33,7 @@ jobs:
         run: ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd /home/myenv/git-training/src/ && python3 date_minus.py"
 
       - name: Run imos_request.py
-        run: ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd /home/myenv/git-training/src/ && python3 imos_request.py"
+        run: ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd /home/myenv/git-training/src/ && python3 imos_requests.py"
 
       - name: Send success email
         if: ${{ success() }}
