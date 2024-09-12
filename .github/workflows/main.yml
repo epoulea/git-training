@@ -44,6 +44,8 @@ jobs:
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
           subject: GitHub Actions Workflow Succeeded IMOS
-          body: The GitHub Actions workflow has completed successfully. The data have imported to IMOS platform successfully.
+          body: |
+            The GitHub Actions workflow has completed successfully.
+            The data have imported to IMOS platform successfully.
           to: epp@cmm.gr, epoulea@outlook.com
           from: github-actions@example.com
