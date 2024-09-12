@@ -26,6 +26,15 @@ jobs:
         run: |
           ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd /home/myenv/git-training/ && git pull origin ${{ secrets.MAIN_BRANCH }}"
 
+      - name: Run application_test.py
+        run: ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd /home/myenv/git-training/ && python application_test.py"
+
+      - name: Run date_minus.py
+        run: ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd /home/myenv/git-training/ && python date_minus.py"
+
+      - name: Run imos_request.py
+        run: ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd /home/myenv/git-training/ && python imos_request.py"
+
       - name: Send success email
         if: ${{ success() }}
         uses: dawidd6/action-send-mail@v3
