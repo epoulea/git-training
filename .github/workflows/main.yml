@@ -43,7 +43,7 @@ jobs:
           server_port: 587
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
-          subject: GitHub Actions Workflow Succeeded
-          body: The GitHub Actions workflow has completed successfully.
-          to: epp@cmm.gr
+          subject: GitHub Actions Workflow Succeeded IMOS
+          body: The GitHub Actions workflow has completed successfully. The data have imported to IMOS platform successfully.
+          to: epp@cmm.gr, epoulea@outlook.com
           from: github-actions@example.com
