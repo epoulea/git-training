@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '0 3 * * *'  # Runs at 3:00 AM UTC daily
+    - cron: '0 3 * * 2-6'  # Runs at 3:00 AM UTC from Tuesday to Saturday
 
 jobs:
   deploy:
