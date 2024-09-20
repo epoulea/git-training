@@ -78,6 +78,6 @@ to_emails_list = to_emails.split(',')
 send_email(
     subject=f"Bunker Curves {subject_date}",
     body="Please find the modified file for the daily bunker curves.",
-    to_emails = to_emails_list
+    to_emails = to_emails_list,
     attachment_path=modified_file_path
 )
