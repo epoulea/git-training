@@ -1,9 +1,10 @@
 import requests
 from datetime import datetime, timedelta
+import os
 
 # Define the API endpoint and token
 api_url = "https://api.veslink.com/v1/imosmessaging/queue"
-api_token = "bc3d3ea58e124feb1af3cd095161263e4fd2448f7eb62bba1526a4e78ecd5cbf"
+api_token = os.getenv('API_TOKEN')
 
 # Get today's date minus one day
 yesterday_date = (datetime.now() - timedelta(days=1)).strftime('%Y%m%d')
