@@ -76,6 +76,6 @@ send_email(
     subject=f"Bunker Curves {subject_date}",
     body="Please find the modified file for the daily bunker curves.",
     #to_emails=["epoulea@lmm.gr"],
-    to_emails = os.getenv('EMAIL_SENDER')
+    to_emails = os.getenv('FIRST_MAIL_SENDER; SECOND_MAIL_SENDER')
     attachment_path=modified_file_path
 )
