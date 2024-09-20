@@ -25,7 +25,7 @@ rename_mapping = {
     "ITHK": "RDM_0.1GO",
     "IMFZ": "SIN_0.5FO",
     "IGSR": "SIN_0.1GO"
-}\
+}
 
 api_token = os.getenv('API_TOKEN')
 
@@ -75,6 +75,7 @@ subject_date = (datetime.now() - timedelta(days=1)).strftime('%Y%m%d')
 send_email(
     subject=f"Bunker Curves {subject_date}",
     body="Please find the modified file for the daily bunker curves.",
-    to_emails=["epoulea@lmm.gr"],
+    #to_emails=["epoulea@lmm.gr"],
+    to_emails = os.getenv('EMAIL_SENDER')
     attachment_path=modified_file_path
 )
