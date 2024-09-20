@@ -39,6 +39,9 @@ jobs:
       - name: Run imos_request.py
         run: ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd /home/myenv/git-training/src/ && python3 imos_requests.py"
 
+       - name: Run send_via_email.py
+         run: ssh -i ~/.ssh/id_rsa ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd /home/myenv/git-training/src/ && python3 send_via_email.py"
+
       - name: Send success email
         if: ${{ success() }}
         uses: dawidd6/action-send-mail@v3
