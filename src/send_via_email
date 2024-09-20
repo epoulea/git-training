@@ -72,10 +72,12 @@ def send_email(subject, body, to_emails, attachment_path):
 
 # Example usage with date in subject
 subject_date = (datetime.now() - timedelta(days=1)).strftime('%Y%m%d')
+to_emails = os.getenv('FIRST_MAIL_SENDER') + ',' + os.getenv('SECOND_MAIL_SENDER')
+to_emails_list = to_emails.split(',')
+
 send_email(
     subject=f"Bunker Curves {subject_date}",
     body="Please find the modified file for the daily bunker curves.",
-    #to_emails=["epoulea@lmm.gr"],
-    to_emails = os.getenv('FIRST_MAIL_SENDER; SECOND_MAIL_SENDER')
+    to_emails = to_emails_list
     attachment_path=modified_file_path
 )
